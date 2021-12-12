@@ -56,7 +56,7 @@ function gerarSenha(num_caractere){
     if(CHECKBOX[0].checked || CHECKBOX[1].checked || CHECKBOX[2].checked || CHECKBOX[3].checked){
 
         for(let i = 0; i < num_caractere;){
-            let num_random = GP.random(3);
+            let num_random = GP.random(4);
 
             let funcoes = [GP.maiuscula(),GP.minuscula(),GP.numero(),GP.especial()];
 

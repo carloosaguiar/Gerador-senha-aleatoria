@@ -23,41 +23,56 @@
         <div class="border border-3 rounded row col-6 p-5">
 
             <label for="customRange2" class="form-label">Quantidade de caracteres</label>
-            <input type="range" class="form-range mb-5" min="5" max="32" id="customRange2">
+            <input type="range" class="form-range mb-5" min="8" max="32" id="customRange2">
 
             <div class="form-check col-6">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <input class="form-check-input" type="checkbox" value="0" id="flexCheckDefault" checked>
                 <label class="form-check-label" for="flexCheckDefault">
                 Letras Maiusculas
                 </label>
             </div>
 
             <div class="form-check col-6">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <input class="form-check-input" type="checkbox" value="1" id="flexCheckChecked" checked>
                 <label class="form-check-label" for="flexCheckChecked">
                 Letras Minusculas
                 </label>
             </div>
 
             <div class="form-check col-6">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <input class="form-check-input" type="checkbox" value="2" id="flexCheckChecked" checked>
                 <label class="form-check-label" for="flexCheckChecked">
                 Números
                 </label>
             </div>
 
             <div class="form-check col-6">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                <input class="form-check-input" type="checkbox" value="3" id="flexCheckChecked" checked>
                 <label class="form-check-label" for="flexCheckChecked">
                 Caracteres Especiais
                 </label>
             </div>
 
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="mb-3 mt-3">
                     <label for="exampleFormControlInput1" class="form-label">Senha gerada</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                    <input type="text" class="form-control" id="senha_input">
                 </div>
+
+                <button class="btn btn-outline-dark col-1 p-1 mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                        <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                        <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                      </svg>
+                </button>
+
+                <button class="btn btn-outline-dark col-1 p-1 mx-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                      </svg>
+                </button>
+
             </div>
         </div>
 

@@ -26,21 +26,66 @@ class geradorAleatorio {
         return this.especiais[this.random(7)];
     }
 
-    gerarSenha(num_caractere){
-        let senha = '';
+}
 
-        for(let i = 0; i <= num_caractere; i++){
-            const funcoes = [this.maiuscula(),this.minuscula(),this.numero(),this.especial()];
+const GP = new geradorAleatorio();
+const RANGE = document.getElementsByTagName('input')[0];
+const INPUT_SENHA = document.getElementById('senha_input');
+const LABEL = document.getElementsByTagName('label')[0];
 
-            senha += funcoes[this.random(4)];
+//Butões
+const COPIAR = document.getElementsByClassName('mx-2')[0];
+const ATUALIZAR = document.getElementsByClassName('mx-2')[1];
 
+// Checkbox
+const CHECKBOX = document.getElementsByClassName('form-check-input');
+
+for(let j = 0; j <= 3; j++){
+    CHECKBOX[j].onclick = () =>{
+        gerarSenha(RANGE.value);
+    }
+}
+
+function exibirQntCara(){
+    LABEL.innerHTML = `Quantidade de caracteres: ${RANGE.value}`;
+}
+
+function gerarSenha(num_caractere){
+    let senha = '';
+
+    if(CHECKBOX[0].checked || CHECKBOX[1].checked || CHECKBOX[2].checked || CHECKBOX[3].checked){
+
+        for(let i = 0; i < num_caractere;){
+            let num_random = GP.random(3);
+
+            let funcoes = [GP.maiuscula(),GP.minuscula(),GP.numero(),GP.especial()];
+
+            if(CHECKBOX[num_random].checked){
+                senha += funcoes[num_random];
+                i++
+            }
+    
         }
 
-        return senha;
+        INPUT_SENHA.value = senha;
 
-    }
+    };
 
 }
 
-const ps = new geradorAleatorio();
+exibirQntCara();
+gerarSenha(RANGE.value);
 
+RANGE.oninput = () => {
+    exibirQntCara();
+    gerarSenha(RANGE.value);
+}
+
+ATUALIZAR.onclick = () =>{
+    gerarSenha(RANGE.value);
+}
+
+COPIAR.onclick = () =>{
+    INPUT_SENHA.select();
+    document.execCommand('copy');
+}

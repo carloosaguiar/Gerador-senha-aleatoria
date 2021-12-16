@@ -69,7 +69,9 @@ function gerarSenha(num_caractere){
 
         INPUT_SENHA.value = senha;
 
-    };
+    } else{
+        alert('Por favor escolha um ou mais campos para gerar a senha!');
+    }
 
 }
 
